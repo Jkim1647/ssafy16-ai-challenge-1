@@ -73,7 +73,7 @@
     </g>
   </g>
 
-  <g transform="translate(64,630)">
+  <g transform="translate(64,686)">
     <rect x="0" y="-14" width="18" height="18" rx="4" fill="#93c5fd"/>
     <text class="s" x="28" y="0">Local dev</text>
     <rect x="130" y="-14" width="18" height="18" rx="4" fill="#2563eb"/>
@@ -81,5 +81,4 @@
     <text class="note" x="410" y="0">Best lesson: prefer stable transfer over the highest dev score.</text>
   </g>
 </svg>
-
 
