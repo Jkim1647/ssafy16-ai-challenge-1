@@ -8,6 +8,19 @@ The project started with Qwen3-VL-4B QLoRA on a local RTX 5060 Ti and was extend
 
 > Competition data and derivatives are not published. This repository excludes original images and CSV files, prediction probabilities, submission files, LoRA adapters, and checkpoints. The code can be adapted to datasets with the same `image + question + a/b/c/d` structure.
 
+## Competition at a glance
+
+| Item | Description |
+| --- | --- |
+| Competition | SSAFY 16th Cohort AI Challenge |
+| Goal | build a VQA model for recycling images and Korean questions |
+| Task | predict one correct choice from `a` through `d` |
+| Metric | Accuracy |
+| Submission | CSV with `id,answer` columns |
+| Key rules | individual teams; LoRA, quantization, and augmentation allowed; API inference prohibited; 20 submissions per day |
+
+See the [official Kaggle competition](https://www.kaggle.com/competitions/ssafy-16-1-ai) and the repository's [competition overview](docs/COMPETITION.en.md) for the dataset structure, evaluation, and implementation-relevant rules.
+
 ![Public score progression](docs/assets/public-score-chart.png)
 
 ## Pipeline at a glance
@@ -78,6 +91,7 @@ When a provided training image and question exactly match a test sample and the 
 ├─ README.md / README.en.md
 ├─ docs/
 │  ├─ EXPERIMENT_LOG.ko.md / EXPERIMENT_LOG.en.md
+│  ├─ COMPETITION.ko.md / COMPETITION.en.md
 │  ├─ METHODS.ko.md / METHODS.en.md
 │  ├─ SUBMISSION_RETROSPECTIVE.ko.md
 │  └─ assets/
@@ -192,6 +206,7 @@ The next iteration should prioritize pHash-grouped 3-fold out-of-fold validation
 
 ## Documentation
 
+- [Competition overview and rules](docs/COMPETITION.en.md)
 - [English experiment log](docs/EXPERIMENT_LOG.en.md)
 - [Korean experiment log](docs/EXPERIMENT_LOG.ko.md)
 - [English methods summary](docs/METHODS.en.md)

@@ -8,6 +8,19 @@
 
 > 데이터와 파생물은 공개하지 않습니다. 대회 원본 이미지/CSV, 예측 확률, 제출 CSV, LoRA adapter와 checkpoint는 이 저장소에 포함하지 않습니다. 코드는 동일한 `이미지 + question + a/b/c/d` 형식의 데이터에 맞게 수정해 사용할 수 있습니다.
 
+## 대회 소개
+
+| 항목 | 내용 |
+| --- | --- |
+| 대회 | SSAFY 16기 1회차 AI 챌린지 |
+| 목표 | 재활용품 이미지와 한국어 질문을 함께 이해하는 VQA 모델 개발 |
+| 문제 | 네 개의 선택지 `a`~`d` 중 정답 하나를 예측 |
+| 평가 | Accuracy |
+| 제출 | `id,answer` 두 열의 CSV |
+| 주요 규칙 | 1인 1팀, LoRA·양자화·증강 허용, API 추론 금지, 하루 20회 제출 |
+
+공식 페이지는 [Kaggle Competition](https://www.kaggle.com/competitions/ssafy-16-1-ai)에서 확인할 수 있습니다. 데이터 구성, 평가 방식과 프로젝트에 적용된 규칙은 [대회 개요 문서](docs/COMPETITION.ko.md)에 정리했습니다.
+
 ![Public score progression](docs/assets/public-score-chart.png)
 
 ## 한눈에 보기
@@ -78,6 +91,7 @@ Qwen3-VL 계열과 Qwen3.5 계열의 선택지별 확률을 섞습니다. 최종
 ├─ README.md / README.en.md
 ├─ docs/
 │  ├─ EXPERIMENT_LOG.ko.md / EXPERIMENT_LOG.en.md
+│  ├─ COMPETITION.ko.md / COMPETITION.en.md
 │  ├─ METHODS.ko.md / METHODS.en.md
 │  ├─ SUBMISSION_RETROSPECTIVE.ko.md
 │  └─ assets/
@@ -217,6 +231,7 @@ Qwen3.5와 다중 해상도 탐색은 `workspace/runpod/`의 스크립트를 참
 
 ## 관련 기록
 
+- [대회 개요와 규칙](docs/COMPETITION.ko.md)
 - [전체 실험 로그](docs/EXPERIMENT_LOG.ko.md)
 - [English experiment log](docs/EXPERIMENT_LOG.en.md)
 - [제출 횟수 20회 회고](docs/SUBMISSION_RETROSPECTIVE.ko.md)
