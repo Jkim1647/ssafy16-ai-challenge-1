@@ -12,20 +12,7 @@ The project started with Qwen3-VL-4B QLoRA on a local RTX 5060 Ti and was extend
 
 ## Pipeline at a glance
 
-```text
-Image + question + choices
-          │
-          ├─ Qwen3-VL 4B/8B ─────────────┐
-          │   └ 4-bit QLoRA              │
-          │                              ├─ weighted choice probabilities
-          └─ Qwen3.5-35B-A3B ───────────┤             │
-              ├ 4-bit QLoRA, 320 steps   │             ▼
-              └ choice-rotation TTA ─────┘      argmax(a,b,c,d)
-                                                         │
-                                              exact-match override
-                                                         │
-                                                  submission.csv
-```
+![VLM-VQA pipeline architecture](docs/assets/pipeline-architecture.svg)
 
 “Combining models” here does not mean merging checkpoints. Each model produces probabilities for `a`, `b`, `c`, and `d`; those probabilities are weighted and averaged before selecting the largest value. This is a **soft ensemble**.
 
@@ -87,7 +74,10 @@ When a provided training image and question exactly match a test sample and the 
 │  ├─ EXPERIMENT_LOG.ko.md / EXPERIMENT_LOG.en.md
 │  ├─ METHODS.ko.md / METHODS.en.md
 │  ├─ SUBMISSION_RETROSPECTIVE.ko.md
-│  └─ assets/public-score-chart.png
+│  └─ assets/
+│     ├─ public-score-chart.png
+│     ├─ pipeline-architecture.svg
+│     └─ validation-vs-public.svg
 └─ workspace/
    ├─ configs/       # Qwen3-VL and Qwen3.5 experiment configs
    ├─ src/           # data audit, training, inference, evaluation
@@ -176,6 +166,8 @@ Use `workspace/runpod/validate_candidates.py` to automate these checks.
 
 ## Experiments that did not transfer
 
+![Validation versus Public Leaderboard](docs/assets/validation-vs-public.svg)
+
 - Dev pseudo-label fine-tuning reduced validation loss but lowered Public LB from 0.92116 to 0.91919.
 - Margin/top-k routing improved local dev slightly but scored only 0.92668 publicly.
 - Global 896px/1024px TTA reached 0.94685–0.94882 on dev but only 0.94048–0.94126 publicly.
@@ -199,3 +191,4 @@ The next iteration should prioritize pHash-grouped 3-fold out-of-fold validation
 - [Korean methods summary](docs/METHODS.ko.md)
 - [Kaggle results discussion](https://www.kaggle.com/competitions/ssafy-16-1-ai/discussion/738274)
 - [Kaggle submission-limit retrospective](https://www.kaggle.com/competitions/ssafy-16-1-ai/discussion/738275)
+

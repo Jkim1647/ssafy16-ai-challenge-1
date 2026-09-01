@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Validation accuracy compared with Public Leaderboard score</title>
+  <desc id="desc">Five experiment variants compare local development accuracy with Public Leaderboard score. High-resolution and multi-resolution experiments improved development accuracy but transferred poorly, while the fine weight 0.52 candidate achieved the best Public score.</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#f0fdf4"/>
+    </linearGradient>
+    <style>
+      .t{font:700 33px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .s{font:400 16px Inter,Segoe UI,Arial,sans-serif;fill:#64748b}
+      .label{font:600 16px Inter,Segoe UI,Arial,sans-serif;fill:#1e293b}
+      .value{font:700 14px Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .tick{font:500 13px Inter,Segoe UI,Arial,sans-serif;fill:#64748b}
+      .note{font:600 15px Inter,Segoe UI,Arial,sans-serif;fill:#166534}
+      .grid{stroke:#cbd5e1;stroke-width:1}
+    </style>
+  </defs>
+  <rect width="1200" height="720" rx="26" fill="url(#bg2)"/>
+  <text class="t" x="60" y="62">Validation gains did not always transfer</text>
+  <text class="s" x="60" y="91">Paired accuracy scores · higher is better</text>
+
+  <g transform="translate(365,135)">
+    <line class="grid" x1="0" x2="0" y1="0" y2="475"/>
+    <line class="grid" x1="172" x2="172" y1="0" y2="475"/>
+    <line class="grid" x1="344" x2="344" y1="0" y2="475"/>
+    <line class="grid" x1="516" x2="516" y1="0" y2="475"/>
+    <line class="grid" x1="688" x2="688" y1="0" y2="475"/>
+    <text class="tick" x="0" y="500" text-anchor="middle">0.920</text>
+    <text class="tick" x="172" y="500" text-anchor="middle">0.928</text>
+    <text class="tick" x="344" y="500" text-anchor="middle">0.936</text>
+    <text class="tick" x="516" y="500" text-anchor="middle">0.944</text>
+    <text class="tick" x="688" y="500" text-anchor="middle">0.952</text>
+
+    <g transform="translate(0,20)">
+      <text class="label" x="-28" y="30" text-anchor="end">Standard rotgeo</text>
+      <rect x="0" y="5" width="535" height="22" rx="6" fill="#93c5fd"/>
+      <rect x="0" y="34" width="483" height="22" rx="6" fill="#2563eb"/>
+      <text class="value" x="545" y="21">dev 0.94488</text>
+      <text class="value" x="493" y="50">public 0.94245</text>
+    </g>
+
+    <g transform="translate(0,110)">
+      <text class="label" x="-28" y="30" text-anchor="end">High-res 896</text>
+      <rect x="0" y="5" width="577" height="22" rx="6" fill="#c4b5fd"/>
+      <rect x="0" y="34" width="440" height="22" rx="6" fill="#7c3aed"/>
+      <text class="value" x="587" y="21">dev 0.94685</text>
+      <text class="value" x="450" y="50">public 0.94048</text>
+    </g>
+
+    <g transform="translate(0,200)">
+      <text class="label" x="-28" y="30" text-anchor="end">High-res 1024</text>
+      <rect x="0" y="5" width="577" height="22" rx="6" fill="#c4b5fd"/>
+      <rect x="0" y="34" width="449" height="22" rx="6" fill="#7c3aed"/>
+      <text class="value" x="587" y="21">dev 0.94685</text>
+      <text class="value" x="459" y="50">public 0.94087</text>
+    </g>
+
+    <g transform="translate(0,290)">
+      <text class="label" x="-28" y="30" text-anchor="end">Multi-resolution</text>
+      <rect x="0" y="5" width="619" height="22" rx="6" fill="#fbcfe8"/>
+      <rect x="0" y="34" width="457" height="22" rx="6" fill="#db2777"/>
+      <text class="value" x="629" y="21">dev 0.94882</text>
+      <text class="value" x="467" y="50">public 0.94126</text>
+    </g>
+
+    <g transform="translate(0,380)">
+      <text class="label" x="-28" y="30" text-anchor="end">Fine weight 0.52</text>
+      <rect x="0" y="5" width="535" height="22" rx="6" fill="#86efac"/>
+      <rect x="0" y="34" width="500" height="22" rx="6" fill="#16a34a"/>
+      <text class="value" x="545" y="21">dev 0.94488</text>
+      <text class="value" x="510" y="50">public 0.94324</text>
+    </g>
+  </g>
+
+  <g transform="translate(64,630)">
+    <rect x="0" y="-14" width="18" height="18" rx="4" fill="#93c5fd"/>
+    <text class="s" x="28" y="0">Local dev</text>
+    <rect x="130" y="-14" width="18" height="18" rx="4" fill="#2563eb"/>
+    <text class="s" x="158" y="0">Public LB</text>
+    <text class="note" x="410" y="0">Best lesson: prefer stable transfer over the highest dev score.</text>
+  </g>
+</svg>
+
+

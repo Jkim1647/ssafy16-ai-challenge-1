@@ -12,20 +12,7 @@
 
 ## 한눈에 보기
 
-```text
-이미지 + 질문 + 선택지
-        │
-        ├─ Qwen3-VL 4B/8B ───────────────┐
-        │   └ 4-bit QLoRA                │
-        │                                ├─ 선택지별 확률 가중평균
-        └─ Qwen3.5-35B-A3B ─────────────┤      │
-            ├ 4-bit QLoRA, 320 steps     │      ▼
-            └ choice-rotation TTA ───────┘  argmax(a,b,c,d)
-                                                   │
-                                      exact retrieval 보정
-                                                   │
-                                            submission.csv
-```
+![VLM-VQA pipeline architecture](docs/assets/pipeline-architecture.svg)
 
 여기서 모델을 “합친다”는 것은 checkpoint를 병합하는 것이 아닙니다. 모델마다 계산한 `a`, `b`, `c`, `d` 확률을 가중 평균하고 가장 높은 선택지를 고르는 **soft ensemble**입니다.
 
@@ -87,7 +74,10 @@ Qwen3-VL 계열과 Qwen3.5 계열의 선택지별 확률을 섞습니다. 최종
 │  ├─ EXPERIMENT_LOG.ko.md / EXPERIMENT_LOG.en.md
 │  ├─ METHODS.ko.md / METHODS.en.md
 │  ├─ SUBMISSION_RETROSPECTIVE.ko.md
-│  └─ assets/public-score-chart.png
+│  └─ assets/
+│     ├─ public-score-chart.png
+│     ├─ pipeline-architecture.svg
+│     └─ validation-vs-public.svg
 └─ workspace/
    ├─ configs/
    │  ├─ baseline.yaml
@@ -200,6 +190,8 @@ Qwen3.5와 다중 해상도 탐색은 `workspace/runpod/`의 스크립트를 참
 `workspace/runpod/validate_candidates.py`가 이 검사를 자동화합니다.
 
 ## 잘되지 않았던 실험
+
+![Validation versus Public Leaderboard](docs/assets/validation-vs-public.svg)
 
 - dev pseudo-label 추가 학습: validation loss는 내려갔지만 Public은 0.92116 → 0.91919로 하락
 - margin/top-k router: dev에서는 일부 개선됐지만 Public 0.92668
