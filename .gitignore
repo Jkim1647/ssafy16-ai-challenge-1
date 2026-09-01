@@ -33,6 +33,7 @@ submissions/
 *.webp
 *.png
 !docs/assets/public-score-chart.png
+!docs/assets/public-leaderboard-anonymized.png
 
 # Local environments and caches
 .venv/
@@ -54,3 +55,4 @@ Thumbs.db
 kaggle.json
 *.pem
 *.key
+

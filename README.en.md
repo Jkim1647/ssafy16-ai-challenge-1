@@ -27,6 +27,12 @@ The project started with Qwen3-VL-4B QLoRA on a local RTX 5060 Ti and was extend
 | 896px / 1024px TTA | high-resolution inference | 0.94048 / 0.94087 |
 | Final tuning | Qwen3.5 weight `0.50 → 0.52` | **0.94324** |
 
+### Public Leaderboard
+
+![Anonymized Public Leaderboard showing rank 12](docs/assets/public-leaderboard-anonymized.png)
+
+The final candidate placed **12th out of 955 participants on the Public Leaderboard (top 1.3%)**. Team names, personal names, and profile images—including the author's—are redacted in the screenshot. The Public board used approximately 50% of the test set, so the final Private ranking may differ.
+
 The high-resolution ensemble reached up to 0.94882 on the local development split but performed worse on the Public Leaderboard. This repository therefore documents unsuccessful experiments and validation overfitting, not just the final recipe.
 
 See [the full English experiment log](docs/EXPERIMENT_LOG.en.md) or [the original Korean log](docs/EXPERIMENT_LOG.ko.md) for the complete timeline.
@@ -76,6 +82,7 @@ When a provided training image and question exactly match a test sample and the 
 │  ├─ SUBMISSION_RETROSPECTIVE.ko.md
 │  └─ assets/
 │     ├─ public-score-chart.png
+│     ├─ public-leaderboard-anonymized.png
 │     ├─ pipeline-architecture.svg
 │     └─ validation-vs-public.svg
 └─ workspace/
