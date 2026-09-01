@@ -34,6 +34,7 @@ submissions/
 *.png
 !docs/assets/public-score-chart.png
 !docs/assets/public-leaderboard-anonymized.jpg
+!docs/assets/examples/*.jpg
 
 # Local environments and caches
 .venv/

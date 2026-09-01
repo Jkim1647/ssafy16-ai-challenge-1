@@ -21,6 +21,25 @@ The project started with Qwen3-VL-4B QLoRA on a local RTX 5060 Ti and was extend
 
 See the [official Kaggle competition](https://www.kaggle.com/competitions/ssafy-16-1-ai) and the repository's [competition overview](docs/COMPETITION.en.md) for the dataset structure, evaluation, and implementation-relevant rules.
 
+## Example questions
+
+> These are **synthetic images** created only to demonstrate the task format. They are not part of the private competition dataset.
+
+<table>
+  <tr>
+    <td width="33%"><img src="docs/assets/examples/synthetic-can.jpg" alt="Synthetic aluminum can"></td>
+    <td width="33%"><img src="docs/assets/examples/synthetic-pet-bottle.jpg" alt="Synthetic PET bottle"></td>
+    <td width="33%"><img src="docs/assets/examples/synthetic-cardboard.jpg" alt="Synthetic cardboard box"></td>
+  </tr>
+  <tr>
+    <td><strong>What is the main material of the recyclable item?</strong><br>a. glass<br>b. metal<br>c. paper<br>d. vinyl<br><strong>Answer: b</strong></td>
+    <td><strong>Which container is most prominent?</strong><br>a. plastic bottle<br>b. paper cup<br>c. glass bottle<br>d. metal can<br><strong>Answer: a</strong></td>
+    <td><strong>What is the folded packaging material?</strong><br>a. vinyl<br>b. cardboard box<br>c. glass bottle<br>d. metal can<br><strong>Answer: b</strong></td>
+  </tr>
+</table>
+
+The model must jointly compare the **visual evidence, the intent of the Korean question, and the meaning of all four choices** rather than classifying the image alone.
+
 ![Public score progression](docs/assets/public-score-chart.png)
 
 ## Pipeline at a glance
@@ -98,7 +117,8 @@ When a provided training image and question exactly match a test sample and the 
 │     ├─ public-score-chart.png
 │     ├─ public-leaderboard-anonymized.jpg
 │     ├─ pipeline-architecture.svg
-│     └─ validation-vs-public.svg
+│     ├─ validation-vs-public.svg
+│     └─ examples/ (synthetic VQA samples)
 └─ workspace/
    ├─ configs/       # Qwen3-VL and Qwen3.5 experiment configs
    ├─ src/           # data audit, training, inference, evaluation

@@ -21,6 +21,25 @@
 
 공식 페이지는 [Kaggle Competition](https://www.kaggle.com/competitions/ssafy-16-1-ai)에서 확인할 수 있습니다. 데이터 구성, 평가 방식과 프로젝트에 적용된 규칙은 [대회 개요 문서](docs/COMPETITION.ko.md)에 정리했습니다.
 
+## 문제 예시
+
+> 아래 사진은 문제 형식을 설명하기 위해 생성한 **합성 이미지**이며, 실제 대회 데이터가 아닙니다.
+
+<table>
+  <tr>
+    <td width="33%"><img src="docs/assets/examples/synthetic-can.jpg" alt="합성 알루미늄 캔 이미지"></td>
+    <td width="33%"><img src="docs/assets/examples/synthetic-pet-bottle.jpg" alt="합성 페트병 이미지"></td>
+    <td width="33%"><img src="docs/assets/examples/synthetic-cardboard.jpg" alt="합성 종이상자 이미지"></td>
+  </tr>
+  <tr>
+    <td><strong>사진 속 재활용품의 주된 재질은?</strong><br>a. 유리<br>b. 금속<br>c. 종이<br>d. 비닐<br><strong>정답: b</strong></td>
+    <td><strong>사진에서 가장 눈에 띄는 용기는?</strong><br>a. 플라스틱 병<br>b. 종이컵<br>c. 유리병<br>d. 금속 캔<br><strong>정답: a</strong></td>
+    <td><strong>사진 속 접힌 포장재는?</strong><br>a. 비닐<br>b. 종이 상자<br>c. 유리병<br>d. 금속 캔<br><strong>정답: b</strong></td>
+  </tr>
+</table>
+
+실제 모델은 사진만 분류하는 것이 아니라 **이미지의 시각 정보, 한국어 질문의 의도, 네 선택지의 의미**를 함께 비교해 답을 선택합니다.
+
 ![Public score progression](docs/assets/public-score-chart.png)
 
 ## 한눈에 보기
@@ -98,7 +117,8 @@ Qwen3-VL 계열과 Qwen3.5 계열의 선택지별 확률을 섞습니다. 최종
 │     ├─ public-score-chart.png
 │     ├─ public-leaderboard-anonymized.jpg
 │     ├─ pipeline-architecture.svg
-│     └─ validation-vs-public.svg
+│     ├─ validation-vs-public.svg
+│     └─ examples/ (synthetic VQA samples)
 └─ workspace/
    ├─ configs/
    │  ├─ baseline.yaml
