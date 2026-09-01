@@ -1,0 +1,25 @@
+experiment_name: baseline_grouped_qwen3vl_r16_lr1e4_seed42
+model_id: Qwen/Qwen3-VL-4B-Instruct
+seed: 42
+attention: sdpa
+prompt_language: ko
+data:
+  train_manifest: workspace/data/manifests/train_grouped_seed42.jsonl
+  val_manifest: workspace/data/manifests/val_grouped_seed42.jsonl
+image: {min_pixels: 200704, max_pixels: 451584}
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+training:
+  epochs: 1
+  batch_size: 1
+  gradient_accumulation: 4
+  learning_rate: 0.0001
+  weight_decay: 0.0
+  warmup_ratio: 0.03
+  max_grad_norm: 1.0
+  logging_steps: 25
+  save_total_limit: 2
+  dataloader_num_workers: 2

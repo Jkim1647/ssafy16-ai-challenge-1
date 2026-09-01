@@ -1,0 +1,56 @@
+# Competition data and derivatives
+train/
+test/
+dev/
+train.csv
+test.csv
+dev.csv
+sample_submission.csv
+workspace/data/
+workspace/outputs/
+artifacts/
+adapters/
+checkpoints/
+submissions/
+
+# Model and prediction files
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.npy
+*.npz
+*.jsonl
+*.csv
+*.tar
+*.tar.gz
+*.zip
+
+# Images are treated as competition data by default.
+*.jpg
+*.jpeg
+*.webp
+*.png
+!docs/assets/public-score-chart.png
+
+# Local environments and caches
+.venv/
+venv/
+baseline/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+.env.*
+!.env.example
+kaggle.json
+*.pem
+*.key

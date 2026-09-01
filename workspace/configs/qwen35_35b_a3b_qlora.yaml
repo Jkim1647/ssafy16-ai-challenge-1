@@ -1,0 +1,39 @@
+experiment_name: qwen35_35b_a3b_qlora
+model_family: qwen35
+model_id: Qwen/Qwen3.5-35B-A3B
+enable_thinking: false
+seed: 42
+attention: sdpa
+prompt_language: ko
+data:
+  train_manifest: workspace/data/manifests/train_grouped_seed42.jsonl
+  val_manifest: workspace/data/manifests/val_grouped_seed42.jsonl
+image:
+  min_pixels: 200704
+  max_pixels: 451584
+lora:
+  r: 8
+  alpha: 16
+  dropout: 0.05
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    - in_proj_qkv
+    - in_proj_z
+    - in_proj_b
+    - in_proj_a
+    - out_proj
+training:
+  epochs: 1
+  max_steps: 320
+  batch_size: 1
+  gradient_accumulation: 8
+  learning_rate: 0.0001
+  weight_decay: 0.01
+  warmup_ratio: 0.03
+  max_grad_norm: 1.0
+  logging_steps: 10
+  save_total_limit: 1
+  dataloader_num_workers: 2
