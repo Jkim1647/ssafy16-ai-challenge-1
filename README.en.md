@@ -40,6 +40,15 @@ See the [official Kaggle competition](https://www.kaggle.com/competitions/ssafy-
 
 The model must jointly compare the **visual evidence, the intent of the Korean question, and the meaning of all four choices** rather than classifying the image alone.
 
+### Difficult counting example
+
+<p align="center"><img src="docs/assets/examples/synthetic-count-six-cans.jpg" alt="Synthetic counting example with exactly six cans" width="72%"></p>
+
+**Question: How many aluminum cans are visible?**<br>
+`a. 4` · `b. 5` · `c. 6` · `d. 7` → **Answer: c**
+
+Counting becomes difficult when similar objects repeat, appear small, or overlap: a model can miss one instance or count the same instance twice. Unlike material classification, it must **separate individual objects and aggregate them accurately**.
+
 ![Public score progression](docs/assets/public-score-chart.png)
 
 ## Pipeline at a glance

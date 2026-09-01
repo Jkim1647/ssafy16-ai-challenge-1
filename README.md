@@ -40,6 +40,15 @@
 
 실제 모델은 사진만 분류하는 것이 아니라 **이미지의 시각 정보, 한국어 질문의 의도, 네 선택지의 의미**를 함께 비교해 답을 선택합니다.
 
+### 어려웠던 Count 유형
+
+<p align="center"><img src="docs/assets/examples/synthetic-count-six-cans.jpg" alt="정확히 여섯 개의 캔이 있는 합성 Count 예시" width="72%"></p>
+
+**질문: 사진 속 알루미늄 캔은 모두 몇 개인가요?**<br>
+`a. 4개` · `b. 5개` · `c. 6개` · `d. 7개` → **정답: c**
+
+Count 문제는 비슷한 물체가 반복되고 일부가 작거나 겹치면 하나를 두 번 세거나 놓치기 쉽습니다. 단순 재질 분류보다 **개별 물체를 분리해 인식한 뒤 정확히 집계하는 능력**이 추가로 필요해 상대적으로 어려웠습니다.
+
 ![Public score progression](docs/assets/public-score-chart.png)
 
 ## 한눈에 보기
