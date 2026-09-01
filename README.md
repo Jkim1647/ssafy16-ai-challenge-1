@@ -82,9 +82,10 @@ Qwen3-VL 계열과 Qwen3.5 계열의 선택지별 확률을 섞습니다. 최종
 
 ```text
 .
-├─ README.md
+├─ README.md / README.en.md
 ├─ docs/
-│  ├─ EXPERIMENT_LOG.ko.md          # 전체 진행 기록과 수치
+│  ├─ EXPERIMENT_LOG.ko.md / EXPERIMENT_LOG.en.md
+│  ├─ METHODS.ko.md / METHODS.en.md
 │  ├─ SUBMISSION_RETROSPECTIVE.ko.md
 │  └─ assets/public-score-chart.png
 └─ workspace/
@@ -202,7 +203,7 @@ Qwen3.5와 다중 해상도 탐색은 `workspace/runpod/`의 스크립트를 참
 
 - dev pseudo-label 추가 학습: validation loss는 내려갔지만 Public은 0.92116 → 0.91919로 하락
 - margin/top-k router: dev에서는 일부 개선됐지만 Public 0.92668
-- 896px/1024px 전체 고해상도 TTA: dev 0.94685~0.94882, Public 0.94048~0.94126
+- 896px/1024px 전체 고해상도 TTA: dev 0.94685–0.94882, Public 0.94048–0.94126
 - 과도한 grid search: 작은 dev 최고점을 선택하면서 Public 일반화가 나빠짐
 
 다음 실험에서는 pHash 기반 group 3-fold OOF, 질문 유형별 reliability routing, hard-sample fine-tuning과 서로 다른 모델 계열의 앙상블을 우선하는 것이 좋습니다.
