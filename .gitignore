@@ -33,7 +33,7 @@ submissions/
 *.webp
 *.png
 !docs/assets/public-score-chart.png
-!docs/assets/public-leaderboard-anonymized.png
+!docs/assets/public-leaderboard-anonymized.jpg
 
 # Local environments and caches
 .venv/

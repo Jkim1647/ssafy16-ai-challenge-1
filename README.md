@@ -42,7 +42,7 @@
 
 ### Public 리더보드
 
-![Anonymized Public Leaderboard showing rank 12](docs/assets/public-leaderboard-anonymized.png)
+![Anonymized Public Leaderboard showing rank 12](docs/assets/public-leaderboard-anonymized.jpg)
 
 최종 제출 후보는 **Public 리더보드 955명 중 12위(상위 약 1.3%)**를 기록했습니다. 위 화면은 다른 참가자와 작성자의 팀명·이름·프로필 이미지를 모두 익명화한 자료입니다. Public 평가는 test의 약 50%만 사용하므로 Private 최종 순위와는 다를 수 있습니다.
 
@@ -96,7 +96,7 @@ Qwen3-VL 계열과 Qwen3.5 계열의 선택지별 확률을 섞습니다. 최종
 │  ├─ SUBMISSION_RETROSPECTIVE.ko.md
 │  └─ assets/
 │     ├─ public-score-chart.png
-│     ├─ public-leaderboard-anonymized.png
+│     ├─ public-leaderboard-anonymized.jpg
 │     ├─ pipeline-architecture.svg
 │     └─ validation-vs-public.svg
 └─ workspace/

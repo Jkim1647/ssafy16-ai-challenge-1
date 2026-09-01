@@ -42,7 +42,7 @@ See the [official Kaggle competition](https://www.kaggle.com/competitions/ssafy-
 
 ### Public Leaderboard
 
-![Anonymized Public Leaderboard showing rank 12](docs/assets/public-leaderboard-anonymized.png)
+![Anonymized Public Leaderboard showing rank 12](docs/assets/public-leaderboard-anonymized.jpg)
 
 The final candidate placed **12th out of 955 participants on the Public Leaderboard (top 1.3%)**. Team names, personal names, and profile images—including the author's—are redacted in the screenshot. The Public board used approximately 50% of the test set, so the final Private ranking may differ.
 
@@ -96,7 +96,7 @@ When a provided training image and question exactly match a test sample and the 
 │  ├─ SUBMISSION_RETROSPECTIVE.ko.md
 │  └─ assets/
 │     ├─ public-score-chart.png
-│     ├─ public-leaderboard-anonymized.png
+│     ├─ public-leaderboard-anonymized.jpg
 │     ├─ pipeline-architecture.svg
 │     └─ validation-vs-public.svg
 └─ workspace/
