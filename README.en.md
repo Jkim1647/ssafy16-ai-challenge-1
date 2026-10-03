@@ -4,7 +4,7 @@
 
 A reproducible pipeline for Korean four-choice Visual Question Answering. Given an image, a question, and choices `a` through `d`, the model returns exactly one answer label.
 
-The project started with Qwen3-VL-4B QLoRA on a local RTX 5060 Ti and was extended to Qwen3.5-35B-A3B on RunPod A100 GPUs, choice-rotation test-time augmentation, and probability ensembling. The Public Leaderboard score improved from **0.92116 to 0.94324**.
+The project started with Qwen3-VL-4B QLoRA on a local RTX 5060 Ti and was extended to Qwen3.5-35B-A3B on RunPod A100 GPUs, choice-rotation test-time augmentation, and probability ensembling. The Public Leaderboard score improved from **0.92116 to 0.94324**, and the final (Private) result was **18th out of 954 participants (top ~1.9%, 0.93851)**.
 
 > Competition data and derivatives are not published. This repository excludes original images and CSV files, prediction probabilities, submission files, LoRA adapters, and checkpoints. The code can be adapted to datasets with the same `image + question + a/b/c/d` structure.
 
@@ -72,7 +72,9 @@ Counting becomes difficult when similar objects repeat, appear small, or overlap
 
 ![Anonymized Public Leaderboard showing rank 12](docs/assets/public-leaderboard-anonymized.jpg)
 
-The final candidate placed **12th out of 955 participants on the Public Leaderboard (top 1.3%)**. Team names, personal names, and profile images—including the author's—are redacted in the screenshot. The Public board used approximately 50% of the test set, so the final Private ranking may differ.
+The final candidate placed **12th on the Public Leaderboard (top 1.3%)**. Team names, personal names, and profile images—including the author's—are redacted in the screenshot.
+
+**Final result (Private): 18th out of 954, accuracy 0.93851.** The Public board used about 50% of the test set; on the other half the ranking dropped six places. Part of the Public-driven tuning likely fit the Public split, which is why the second challenge used an in-house validation set to decide what to adopt.
 
 The high-resolution ensemble reached up to 0.94882 on the local development split but performed worse on the Public Leaderboard. This repository therefore documents unsuccessful experiments and validation overfitting, not just the final recipe.
 

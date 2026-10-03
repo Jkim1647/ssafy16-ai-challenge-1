@@ -4,7 +4,7 @@
 
 재활용품 이미지와 한국어 질문, 네 개의 선택지를 입력받아 `a`~`d` 중 하나를 고르는 VQA(Visual Question Answering) 파이프라인입니다.
 
-로컬 RTX 5060 Ti의 Qwen3-VL-4B QLoRA에서 시작해 RunPod A100의 Qwen3.5-35B-A3B, 선택지 회전 TTA, 확률 앙상블까지 확장했습니다. Public Leaderboard는 **0.92116 → 0.94324**로 개선했습니다.
+로컬 RTX 5060 Ti의 Qwen3-VL-4B QLoRA에서 시작해 RunPod A100의 Qwen3.5-35B-A3B, 선택지 회전 TTA, 확률 앙상블까지 확장했습니다. Public Leaderboard는 **0.92116 → 0.94324**로 개선했고, 최종 순위(Private)는 **954명 중 18위(상위 약 1.9%, 0.93851)**입니다.
 
 > 데이터와 파생물은 공개하지 않습니다. 대회 원본 이미지/CSV, 예측 확률, 제출 CSV, LoRA adapter와 checkpoint는 이 저장소에 포함하지 않습니다. 코드는 동일한 `이미지 + question + a/b/c/d` 형식의 데이터에 맞게 수정해 사용할 수 있습니다.
 
@@ -72,7 +72,9 @@ Count 문제는 비슷한 물체가 반복되고 일부가 작거나 겹치면 �
 
 ![Anonymized Public Leaderboard showing rank 12](docs/assets/public-leaderboard-anonymized.jpg)
 
-최종 제출 후보는 **Public 리더보드 955명 중 12위(상위 약 1.3%)**를 기록했습니다. 위 화면은 다른 참가자와 작성자의 팀명·이름·프로필 이미지를 모두 익명화한 자료입니다. Public 평가는 test의 약 50%만 사용하므로 Private 최종 순위와는 다를 수 있습니다.
+최종 제출 후보는 **Public 리더보드 12위(상위 약 1.3%)**를 기록했습니다. 위 화면은 다른 참가자와 작성자의 팀명·이름·프로필 이미지를 모두 익명화한 자료입니다.
+
+**최종 결과(Private): 954명 중 18위, 정확도 0.93851.** Public 평가는 test의 약 50%만 사용하는데, 나머지 절반으로 매긴 최종 순위에서는 Public보다 6계단 내려갔습니다. Public 점수를 올리는 방향으로 조합을 다듬은 것이 일부 Public에 맞춰졌던 것으로 보고, 이 경험을 2차 대회에서 자체 검증셋으로 채택을 결정하는 원칙으로 이어 갔습니다.
 
 고해상도 후보의 dev accuracy는 최대 0.94882였지만 Public은 오히려 낮아졌습니다. 이 프로젝트는 성공한 방법뿐 아니라 dev 과적합, margin router 실패와 제출 횟수 관리까지 함께 기록합니다.
 
