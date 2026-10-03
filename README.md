@@ -1,6 +1,6 @@
-# SSAFY VLM-VQA Pipeline
+# SSAFY 16기 AI 챌린지 1차 · 재활용품 VQA
 
-**한국어** | [English](README.en.md)
+**한국어** | [English](README.en.md) &nbsp;·&nbsp; 다음 대회: [AI 챌린지 2차 · 사진 속 글자 읽기 VQA (최종 2위)](https://github.com/Jkim1647/ssafy16-ai-challenge-2)
 
 재활용품 이미지와 한국어 질문, 네 개의 선택지를 입력받아 `a`~`d` 중 하나를 고르는 VQA(Visual Question Answering) 파이프라인입니다.
 

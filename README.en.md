@@ -1,6 +1,6 @@
-# SSAFY VLM-VQA Pipeline
+# SSAFY 16th AI Challenge #1 · Recyclables VQA
 
-[한국어](README.md) | **English**
+[한국어](README.md) | **English** &nbsp;·&nbsp; Next: [AI Challenge #2 · Scene-text VQA (2nd place)](https://github.com/Jkim1647/ssafy16-ai-challenge-2)
 
 A reproducible pipeline for Korean four-choice Visual Question Answering. Given an image, a question, and choices `a` through `d`, the model returns exactly one answer label.
 
